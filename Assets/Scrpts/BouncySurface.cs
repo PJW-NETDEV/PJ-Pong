@@ -13,7 +13,7 @@ public class BouncySurface : MonoBehaviour
         {
             // Create some variables for tracking speed
             
-            Debug.Log("Collied with ball");
+            //Debug.Log("Collied with ball");
 
             // Set a loal variable for the ball to reference from the collision object
             Ball ball_var = this_collision.gameObject.GetComponent<Ball>();

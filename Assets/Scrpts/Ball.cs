@@ -31,7 +31,7 @@ public class Ball : MonoBehaviour
         Vector2 direcion = new Vector2(x, y);
         _rigidbody.AddForce(direcion * this._speed);
 
-        Debug.Log(_rigidbody.totalForce);
+        //Debug.Log(_rigidbody.totalForce);
     }
 
     public void AddForce(Vector2 force)
@@ -40,7 +40,7 @@ public class Ball : MonoBehaviour
         if(Mathf.Abs(_rigidbody.velocity.x) < _max_speed)
         {
             _rigidbody.AddForce(force);
-            Debug.Log("Current Speed: " + Mathf.Abs(_rigidbody.velocity.x));
+         //   Debug.Log("Current Speed: " + Mathf.Abs(_rigidbody.velocity.x));
         }
 
     }
