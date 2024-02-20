@@ -10,6 +10,7 @@ public class Ball : MonoBehaviour
     public TMPro.TMP_Text general_text;
     public float _max_speed = 9;
     private string stop_text;
+    public bool StartStraigtht;
 
 
     private void Awake()
@@ -24,14 +25,28 @@ public class Ball : MonoBehaviour
 
     private void AddStartingForce()
     {
-        float x = Random.value < 0.5f ? -1.0f : 1.0f;
-        float y = Random.value < 0.5f ? Random.Range(-1.0f, -0.5f) :
-                                        Random.Range(-1.0f, -0.5f);
+        if (StartStraigtht == false)
+        {
+            float x = Random.value < 0.5f ? -1.0f : 1.0f;
+            float y = Random.value < 0.5f ? Random.Range(-1.0f, -0.5f) :
+                                            Random.Range(-1.0f, -0.5f);
 
-        Vector2 direcion = new Vector2(x, y);
-        _rigidbody.AddForce(direcion * this._speed);
+            Vector2 direcion = new Vector2(x, y);
+            _rigidbody.AddForce(direcion * this._speed);
 
-        //Debug.Log(_rigidbody.totalForce);
+
+            //Debug.Log(_rigidbody.totalForce);
+        } else
+        {
+            float x = -1;
+            float y = 0;
+
+            Vector2 direcion = new Vector2(x, y);
+            _rigidbody.AddForce(direcion * this._speed);
+        }
+
+
+
     }
 
     public void AddForce(Vector2 force)
